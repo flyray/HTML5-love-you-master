@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>my love</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*2015—02-14</span><br />
+			<span class="space"/><span class="comments">*by zhangdianlei.</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			Boy name = <span class="keyword">Mr</span> ZHANG<br />
+			Girl name = <span class="keyword">Mrs</span> XIN<br />
+			Date time = 2005/09/22;<br />
+            Where place = Grade two class one <br/>
+			<span class="comments">// Maybe, earlier.</span><br />
+            The story begin ... <br/>
+            <span class="comments">//It's probably a sunny afternoon. </span> <br/>
+            The girl borrow a dictionary from the boy;<br />
+            And give him a big <span class="keyword">smile</span> ;<br />
+			<span class="comments">// The boy feel like the time point of being stagnant .</span><br />
+			The boy think innocently that the girl is the <span class="keyword">one</span> ;<br />
+            ..<br/>
+            ..<br/>
+            ..<br/>
+            Time flies <br/>
+            ..<br/>
+            the time is changing, we are growing up <br/>
+            <span class="comments">// Many things happen. </span> <br/>
+            you know, <br/>
+            my heart <span class="keyword">never change </span>
+			<br>
+			I want to say:<br />
+			<span class="keyword">Baby </span> <br/>
+            <span class="keyword">I wanna explore the future with u </span> <br/>
+            <span class="keyword">And use the life to protect u! </span><br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					亲爱的，the time I fall in love with u
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+
+					<div class="signature">-- 磊磊</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2005, 9, 22);
+together.setHours(0);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+
+
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+</body>
+</html>
